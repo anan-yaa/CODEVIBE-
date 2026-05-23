@@ -12,6 +12,7 @@ A modern, browser-based coding practice platform inspired by FreeCodeCamp. Learn
 
 **[Live Demo](https://codevibeforyou.netlify.app/)** •
 **[Project Structure](#project-structure)** •
+**[Contributor Leaderboard](CONTRIBUTOR_LEADERBOARD.md)** •
 **[Contributing](#contributing)** •
 **[Code of Conduct](#code-of-conduct)** •
 **[Community](#community)** •
@@ -142,14 +143,22 @@ CodeVibe removes friction from the learning journey. Whether you're a complete b
    ```
 
 3. **Configure environment variables**
-   
-   Create a `.env` file in the server directory:
-   ```env
-   PORT=5000
-   MONGODB_URI=your_mongodb_connection_string
-   JWT_SECRET=your_jwt_secret_key
-   NODE_ENV=development
-   ```
+
+    Copy the environment template and fill in your values:
+
+```bash
+    cp server/.env.example server/.env
+```
+
+   Then open `server/.env` and update at minimum:
+   - `MONGODB_URI` — your local or MongoDB Atlas connection string
+   - `JWT_SECRET` — generate a secure key by running:
+```bash
+   node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+   See [`server/.env.example`](./server/.env.example) for all available
+   variables and their descriptions.
 
 4. **Start the development servers**
    

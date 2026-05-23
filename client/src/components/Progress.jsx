@@ -39,17 +39,17 @@ const Progress = () => {
       <div className="bg-gradient-to-r from-purple-700 via-pink-600 to-purple-800 p-6 rounded-2xl shadow-lg w-[400px] text-center">
         <h2 className="text-2xl font-bold text-white mb-4">📖 Your Progress</h2>
         <p className="text-lg text-pink-200 mb-2">
-          Lessons Completed: <span className="font-bold text-white">{progress.completedLessons}</span>
+          Lessons Completed: <span className="font-bold text-white">{progress.completedLessons?.length ?? 0}</span>
         </p>
         <p className="text-lg text-pink-200">
-          Total Lessons: <span className="font-bold text-white">{progress.totalLessons}</span>
+          Total Lessons: <span className="font-bold text-white">{progress.totalLessons ?? "—"}</span>
         </p>
 
         <div className="w-full bg-pink-200 rounded-full h-4 mt-4">
           <div
             className="bg-purple-900 h-4 rounded-full"
             style={{
-              width: `${(progress.completedLessons / progress.totalLessons) * 100}%`,
+              width: `${progress.totalLessons ? Math.round((progress.completedLessons.length / progress.totalLessons) * 100) : 0}%`,
             }}
           ></div>
         </div>
