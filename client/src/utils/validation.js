@@ -29,3 +29,24 @@ export const validateUsername = (username) => {
 
   return "";
 };
+export const validateCollege = (college) => {
+  if (!college) return "College is required";
+
+  if (college.length < 2) {
+    return "College name must be at least 2 characters";
+  }
+
+  return "";
+};
+
+export const validateYear = (year) => {
+  if (!year) return "Year is required";
+
+  const validYears = ["1", "2", "3", "4"];
+
+  if (!validYears.includes(year)) {
+    return "Please enter a valid academic year";
+  }
+
+  return "";
+};
