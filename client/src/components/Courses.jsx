@@ -219,8 +219,8 @@ const Courses = () => {
             type="text"
             className="search-input"
             placeholder="Search for courses (HTML, React, DSA...)"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
           />
         </div>
       </div>
