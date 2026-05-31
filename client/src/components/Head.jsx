@@ -2,15 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../AuthProvider.jsx";
 import { useSearch } from "../context/SearchContext.jsx";
-import {
-  FaSignInAlt,
-  FaSignOutAlt,
-  FaUserPlus,
-  FaTachometerAlt,
-  FaGamepad,
-  FaSearch,
-  FaTimes,
-} from "react-icons/fa";
+import { useDebounce } from "../hooks/useDebounce"; // added
+import { FaSignInAlt, FaSignOutAlt, FaUserPlus, FaTachometerAlt, FaGamepad, FaSearch, FaTimes } from "react-icons/fa";
 import logo from "../assets/favicon.png";
 
 const COURSES = [
@@ -28,6 +21,7 @@ const COURSES = [
 
 const Head = () => {
   const { query, setQuery } = useSearch();
+  const debouncedQuery = useDebounce(query, 350); // added
   const [suggestions, setSuggestions] = useState([]);
   const [focused, setFocused] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,16 +44,23 @@ const Head = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSearch = (value) => {
-    setQuery(value);
-    if (value.trim().length === 0) {
+  //  Filtering now runs only when debouncedQuery changes, not on every keystroke
+  useEffect(() => {
+    if (debouncedQuery.trim().length === 0) {
       setSuggestions([]);
       return;
     }
     const filtered = COURSES.filter((c) =>
-      c.label.toLowerCase().includes(value.trim().toLowerCase()),
+      c.label.toLowerCase().includes(debouncedQuery.trim().toLowerCase())
     );
     setSuggestions(filtered);
+  }, [debouncedQuery]);
+
+  const handleSearch = (value) => {
+    setQuery(value); // still updates instantly so input stays responsive
+    if (value.trim().length === 0) {
+      setSuggestions([]);
+    }
   };
 
   const handleSelect = (course) => {
@@ -229,7 +230,6 @@ const Head = () => {
             role="search"
             aria-label="Search courses"
           >
-            {/*<FaSearch className="search-icon-left" aria-hidden="true" />*/}
             <input
               ref={inputRef}
               type="text"
