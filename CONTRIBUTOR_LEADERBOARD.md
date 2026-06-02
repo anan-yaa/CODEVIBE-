@@ -20,7 +20,7 @@ Last updated: 2026-06-02
 | 4 | [@Dhruvil20060](https://github.com/Dhruvil20060) | 111 | 8 | 6 | 7 |
 | 5 | [@Aayuiiitmg](https://github.com/Aayuiiitmg) | 104 | 12 | 8 | 0 |
 | 6 | [@namrarafique93-del](https://github.com/namrarafique93-del) | 97 | 11 | 5 | 5 |
-| 7 | [@thedaripanator](https://github.com/thedaripanator) | 90 | 10 | 5 | 4 |
+| 7 | [@thedaripanator](https://github.com/thedaripanator) | 95 | 10 | 5 | 5 |
 | 8 | [@Saubhagya1621](https://github.com/Saubhagya1621) | 89 | 7 | 5 | 5 |
 | 9 | [@KGFCH2](https://github.com/KGFCH2) | 87 | 1 | 1 | 15 |
 | 10 | [@pranav-cholleti](https://github.com/pranav-cholleti) | 86 | 18 | 3 | 4 |
