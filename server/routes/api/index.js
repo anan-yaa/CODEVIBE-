@@ -11,6 +11,7 @@ const contributorRoutes = require("./contributorRoutes");
 const analyticsRoutes = require('./analytics');
 // My Mistakes Dashboard - NEW FEATURE
 const mistakesRoutes = require('./mistakesRoutes');
+const examRoutes = require('./examRoutes');
 
 router.use('/feedback', feedbackRoutes);
 router.use('/progress', progressRoutes);
@@ -22,5 +23,6 @@ router.use('/certificate', certificateRoutes);
 router.use('/contributors', contributorRoutes);
 // My Mistakes Dashboard - NEW FEATURE
 router.use('/mistakes', mistakesRoutes);
+router.use('/exam', examRoutes);
 
 module.exports = router;
