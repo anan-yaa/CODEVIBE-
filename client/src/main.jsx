@@ -226,6 +226,7 @@ import GlobalBackNav from "./components/common/GlobalBackNav.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import { SearchProvider } from "./context/SearchContext.jsx";
 import  Contact  from "./components/Contact.jsx";
+import OAuthCallback from "./components/OAuthCallback.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -243,6 +244,7 @@ createRoot(document.getElementById('root')).render(
               <Route path="/lessons" element={<Courses />} />
               <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
               <Route path="/signup" element={<PublicRoute><SignUp /></PublicRoute>} />
+              <Route path="/auth/success" element={<OAuthCallback />} />
               <Route path="/ForgetPassword" element={<ForgetPassword />} />
               <Route path="/ResetPassword" element={<ResetPassword />} />
               <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
