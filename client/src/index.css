@@ -168,16 +168,17 @@ header img:hover {
   font-weight: 600;
   background: transparent;
   border: none;
-  padding: 0.55rem 1rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 0;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.25rem;
   transition: all 0.3s cubic-bezier(0.4, 0.2, 0.2, 1);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  flex-shrink: 0;
 }
 
 .nav-link::before {
@@ -2681,15 +2682,21 @@ select:focus {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1.5rem;
+  gap: 0.5rem;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999999;
   width: 100%;
   background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
-  padding: 1rem 2.5rem;
+  padding: 1rem;
   border-bottom: 3px solid #ff4d6d;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.header-top::-webkit-scrollbar {
+  display: none;
 }
 
 .header-title-row,

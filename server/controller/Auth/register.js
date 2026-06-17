@@ -120,7 +120,7 @@ const register = async (req, res, next) => {
         message: duplicateField === "email" 
           ? "User already exists" 
           : `Registration failed: A user with this ${duplicateField} already exists.`,
-        field: duplicateField
+        field: Object.keys(error.keyPattern || {})[0]
       });
     }
 
