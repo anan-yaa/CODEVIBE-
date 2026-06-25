@@ -8,6 +8,7 @@ import Dropdown from "./common/Dropdown";
 import HintModal from "./HintModal";
 import SolutionModal from "./SolutionModal";
 import { useHints } from "../hooks/useHints";
+import { Copy, Download, Share2 } from "lucide-react";
 
 const SCORING = (attempt) =>
   attempt === 1 ? 100 :
@@ -634,35 +635,34 @@ const Compiler = ({
           }}
         />
       )}
+      {/* Compiler Toolbar */}
+       <div className="compiler-toolbar">
+    <button
+      title="Copy Code"
+      onClick={copyCode}
+      className="compiler-icon-btn"
+    >
+      <Copy size={18} />
+    </button>
+
+    <button
+      title="Download Code"
+      onClick={downloadCode}
+      className="compiler-icon-btn"
+    >
+      <Download size={18} />
+    </button>
+
+    <button
+      title="Share Code"
+      onClick={shareCode}
+      className="compiler-icon-btn"
+    >
+      <Share2 size={18} />
+    </button>
+  </div>
 
       <div className="compiler-editor-wrap">
-        {/* toolbar */}
-        <div className="compiler-toolbar">
-          <button
-              title="Copy Code"
-              aria-label="Copy code to clipboard"
-              onClick={copyCode}
-              className="compiler-btn compiler-btn--copy"
-            >
-            📋 Copy
-          </button>
-          <button
-              title="Download Code"
-              aria-label="Download code file"
-              onClick={downloadCode}
-              className="compiler-btn compiler-btn--download"
-            >
-            ⬇️ Download
-          </button>
-          <button
-              title="Share Code"
-              aria-label="Share code snippet"
-              onClick={shareCode}
-              className="compiler-btn compiler-btn--share"
-            >
-            🔗 Share
-          </button>
-        </div>
 
         {/* editor */}
         <textarea

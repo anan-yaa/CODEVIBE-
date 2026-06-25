@@ -2278,6 +2278,7 @@ select:focus {
   flex-direction: column;
   gap: 10px;
   box-shadow: 0 0 30px rgba(255, 77, 109, 0.12);
+  justify-content: space-between;
 }
 
 .compiler-lang-select {
@@ -2304,12 +2305,11 @@ select:focus {
 }
 
 .compiler-toolbar {
-  position: absolute;
-  top: 8px;
-  right: 8px;
+  justify-content: flex-end;
   display: flex;
   gap: 6px;
   z-index: 10;
+  margin-left:auto;
 }
 
 .compiler-textarea {
